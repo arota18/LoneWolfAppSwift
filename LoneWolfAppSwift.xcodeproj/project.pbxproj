@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		421DAF552A5C95D9000A52FE /* StatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421DAF542A5C95D9000A52FE /* StatView.swift */; };
+		421DAF572A5C9678000A52FE /* CombatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421DAF562A5C9678000A52FE /* CombatView.swift */; };
+		421DAF592A5C96DF000A52FE /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421DAF582A5C96DF000A52FE /* InfoView.swift */; };
 		426DAAC52A574E6F0070A91B /* LoneWolfAppSwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426DAAC42A574E6F0070A91B /* LoneWolfAppSwiftApp.swift */; };
 		426DAAC72A574E6F0070A91B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426DAAC62A574E6F0070A91B /* ContentView.swift */; };
 		426DAAC92A574E700070A91B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 426DAAC82A574E700070A91B /* Assets.xcassets */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		421DAF542A5C95D9000A52FE /* StatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatView.swift; sourceTree = "<group>"; };
+		421DAF562A5C9678000A52FE /* CombatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombatView.swift; sourceTree = "<group>"; };
+		421DAF582A5C96DF000A52FE /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		426DAAC12A574E6F0070A91B /* LoneWolfAppSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoneWolfAppSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		426DAAC42A574E6F0070A91B /* LoneWolfAppSwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoneWolfAppSwiftApp.swift; sourceTree = "<group>"; };
 		426DAAC62A574E6F0070A91B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,6 +91,9 @@
 			children = (
 				426DAAC62A574E6F0070A91B /* ContentView.swift */,
 				426DAAD62A575CF90070A91B /* NewPlayerView.swift */,
+				421DAF542A5C95D9000A52FE /* StatView.swift */,
+				421DAF562A5C9678000A52FE /* CombatView.swift */,
+				421DAF582A5C96DF000A52FE /* InfoView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -159,10 +168,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				421DAF572A5C9678000A52FE /* CombatView.swift in Sources */,
 				426DAAD72A575CF90070A91B /* NewPlayerView.swift in Sources */,
 				426DAAC72A574E6F0070A91B /* ContentView.swift in Sources */,
+				421DAF552A5C95D9000A52FE /* StatView.swift in Sources */,
 				426DAAD32A574FAE0070A91B /* Player.swift in Sources */,
 				426DAAC52A574E6F0070A91B /* LoneWolfAppSwiftApp.swift in Sources */,
+				421DAF592A5C96DF000A52FE /* InfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

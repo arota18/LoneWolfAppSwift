@@ -16,30 +16,28 @@ struct ContentView: View {
     var body: some View {
         Group {
             if player.name.isEmpty {
-                Button("Create new Lone Wolf") {
-                    isNewGameShown = true
-                }
-            } else {
-                mainView
-            }
+                Button("Create new Lone Wolf") { isNewGameShown = true }
+            } else { mainMenuView }
         }
-        .sheet(isPresented: $isNewGameShown) {
-            NewPlayerView()
-        }
+        .sheet(isPresented: $isNewGameShown) { NewPlayerView() }
         .environmentObject(player)
     }
     
-    @ViewBuilder var mainView: some View {
-        VStack {
-            Spacer()
-            Text(player.name)
-            Spacer()
-            Text("\(player.combat)")
-            Spacer()
-            Text("\(player.endurance)")
-            Spacer()
+    @ViewBuilder var mainMenuView: some View {
+        TabView {
+            StatView(isNewGameShown: $isNewGameShown)
+                .tabItem {
+                    Label("Stat", systemImage: "doc.text.below.ecg")
+                }
+            CombatView()
+                .tabItem {
+                    Label("Combat", systemImage: "figure.martial.arts")
+                }
+            InfoView()
+                .tabItem {
+                    Label("Info", systemImage: "info")
+                }
         }
-        .padding()
     }
 }
 
