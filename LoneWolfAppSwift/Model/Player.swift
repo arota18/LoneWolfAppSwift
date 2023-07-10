@@ -14,8 +14,12 @@ class Player: ObservableObject, Codable {
     }
     
     @Published var name: String
-    @Published var combat: Int
-    @Published var endurance: Int
+    @Published var combat: Int {
+        willSet { save() }
+    }
+    @Published var endurance: Int {
+        willSet { save() }
+    }
     
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
