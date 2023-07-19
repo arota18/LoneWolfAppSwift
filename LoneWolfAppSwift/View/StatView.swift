@@ -55,20 +55,20 @@ struct SingleStatView: View {
     
     let statName: String
     @Binding var singleStat: Int
-    let iconSize = 32.0
+    let iconSizeAndGap = 32.0
     
     var body: some View {
         VStack {
             Text(statName)
                 .foregroundColor(.secondary)
-            HStack(spacing: iconSize) {
-                Button {
+            HStack(spacing: iconSizeAndGap) {
+                Button(role: .destructive) {
                     singleStat -= 1
                 } label: {
                     Image(systemName: "minus.circle")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: iconSize)
+                        .frame(width: iconSizeAndGap)
                 }
                 Text("\(singleStat)")
                     .statMod()
@@ -78,7 +78,7 @@ struct SingleStatView: View {
                     Image(systemName: "plus.circle")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: iconSize)
+                        .frame(width: iconSizeAndGap)
                 }
             }
         }

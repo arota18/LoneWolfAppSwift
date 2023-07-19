@@ -26,11 +26,16 @@ struct NewPlayerView: View {
                 Section {
                     Text("Combat Skill")
                     TextField("Initial Combat Skill", value: $combat, formatter: NumberFormatter())
+                        .keyboardType(.numberPad)
                 }
                 Section {
                     Text("Endurance")
                     TextField("Initial Endurance", value: $endurance, formatter: NumberFormatter())
+                        .keyboardType(.numberPad)
                 }
+            }
+            .onTapGesture {
+                hideKeyboard()
             }
             .navigationTitle("New Game")
             .navigationBarTitleDisplayMode(.inline)
