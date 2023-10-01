@@ -17,6 +17,9 @@ struct NewPlayerView: View {
     @State private var endurance = 0
     @State private var knownArts = [Int]()
     
+    @State private var isAlertShown = false
+    @State private var alertMessage = ""
+    
     let arts: [KaiArt]
     
     var body: some View {
@@ -40,16 +43,22 @@ struct NewPlayerView: View {
                     List(arts) { art in
                         HStack {
                             Text(art.name)
+                                .padding(.trailing)
+                                .onTapGesture {
+                                    alertMessage = art.description
+                                    isAlertShown = true
+                                }
                             Spacer()
-                            Button {
-                                tapKaiArt(art.id)
-                            } label: {
-                                Image(systemName: artChecked(art.id) ? "checkmark.circle.fill" : "circle")
-                            }
-
+                            Image(systemName: artChecked(art.id) ? "\(artIndex(art.id)+1).circle.fill" : "circle")
+                                .onTapGesture { tapKaiArt(art.id) }
+                                .foregroundColor(artChecked(art.id) ? .green : .gray)
+                                .font(.title2)
                         }
                     }
                 }
+            }
+            .alert(alertMessage, isPresented: $isAlertShown) {
+                Button("Ok", role: .cancel) { }
             }
             .onTapGesture {
                 hideKeyboard()
@@ -70,7 +79,7 @@ struct NewPlayerView: View {
         }
     }
     
-    func tapKaiArt(_ id: Int) {
+    private func tapKaiArt(_ id: Int) {
         if artChecked(id) {
             knownArts.remove(at: knownArts.firstIndex(of: id)!)
         } else if knownArts.count < 5 {
@@ -79,17 +88,21 @@ struct NewPlayerView: View {
         // TODO: aggiungere eventuale notifica in un else
     }
     
-    func artChecked(_ id: Int) -> Bool {
+    private func artIndex(_ id: Int) -> Int {
+        knownArts.firstIndex(of: id)!
+    }
+    
+    private func artChecked(_ id: Int) -> Bool {
         knownArts.contains(id)
     }
     
-    func saveGame() {
+    private func saveGame() {
         player.setNewPlayer(name, combat, endurance)
         dismiss()
     }
     
-    func checkForm() -> Bool {
-        name.isEmpty || combat <= 0 || endurance <= 0
+    private func checkForm() -> Bool {
+        name.isEmpty || combat < 10 || endurance < 20 || knownArts.count < 5
     }
 }
 
