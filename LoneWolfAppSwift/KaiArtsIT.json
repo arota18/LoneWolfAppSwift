@@ -1,0 +1,52 @@
+[
+        {
+            "id": 0,
+            "name": "Mimetismo",
+            "description": "Questa disciplina permette al Cavaliere Kai di adattarsi all'ambiente circostante. All'aperto, in campagna, può nascondersi tra alberi e rocce e passare vicino al nemico senza essere scoperto. In città e nei centri abitati lo rende, invece, capace di comportarsi e parlare come un nativo del posto. Può anche aiutarlo a trovare un rifugio o un nascondiglio sicuro."
+        },
+        {
+            "id": 1,
+            "name": "Caccia",
+            "description": "Questa disciplina permette a un Cavaliere Kai di non morire di fame quando si trova in un ambiente selvaggio. Sarà sempre in grado di cacciare per procurarsi cibo, tranne che in territori desolati e nel deserto. E' inoltre una tecnica che gli consente di muoversi agilmente senza fare rumore durante l'inseguimento della preda."
+        },
+        {
+            "id": 2,
+            "name": "Sesto Senso",
+            "description": "Questa disciplina avverte chi la possiede di un pericolo imminente. Permette anche di capire la vera natura di uno sconosciuto o di uno strano oggetto incontrato nel corso dell'avventura."
+        },
+        {
+            "id": 3,
+            "name": "Orientamento",
+            "description": "Questa disciplina permette a un Cavaliere Kai di scegliere il percorso giusto anche in un territorio selvaggio, di scoprire l'ubicazione di una persona o di un oggetto in zone abitate e di leggere i segreti delle tracce e delle impronte."
+        },
+        {
+            "id": 4,
+            "name": "Guarigione",
+            "description": "Questa disciplina serve a recuperare punti RESISTENZA persi in combattimento. Se possiedi quest'abilità, puoi recuperare un punto di RESISTENZA ogni volta che superi un paragrafo numerato senza essere impegnato in combattimento (puoi usare questa capacità solo se la tua RESISTENZA è scesa sotto il punteggio di partenza)."
+        },
+        {
+            "id": 5,
+            "name": "Scherma",
+            "description": "Quando entra nel Monastero Kai, ogni allievo impara ad usare perfettamente un tipo di arma. Se decide di padroneggiare la disciplina Kai della scherma, estrai un numero al solito modo dalla Tabella del Destino e vedi nell'elenco che segue a quale arma corrisponde. Questa sarà l'arma in cui sei maestro. Se ti capiterà di affrontare un combattimento con tale arma, aggiungi due punti alla tua COMBATTIVITA'. Il fatto che tu sia esperto in una data arma non significa necessariamente che comincierai il viaggio con essa. Ad ogni modo, avrai la possibilità di procurarti diverse armi nel corso dell'avventura. Non puoi portare più di due armi alla volta e puoi usarne solo una durante un combattimento."
+        },
+        {
+            "id": 6,
+            "name": "Psicoschermo",
+            "description": "I signori delle tenebre e molti degli esseri malvagi loro servitori possono attaccarti con il loro Psicolaser. La disciplina Kai dello Psicoschermo ti consente di non perdere punti resistenza se sei sottoposto a questa forma di attacco."
+        },
+        {
+            "id": 7,
+            "name": "Psicolaser",
+            "description": "Questa tecnica permette a un Cavaliere Kai di attaccare i nemici con la forza della mente. Può essere usata insieme alle armi normali e aggiunge 2 punti alla tua COMBATTIVITA'. Non tutte le creature che si incontrano in questa avventura possono essere ferite con lo Psicolaser. Ti verrà di volta in volta detto se il tuo avversario ne è immune."
+        },
+        {
+            "id": 8,
+            "name": "Affinità Animale",
+            "description": "Questa disciplina permette a un Cavaliere Kai di comunicare con alcuni animali e di capire le intenzioni di altri. In certi casi può consentire di controllare i loro istinti e il loro comportamento."
+        },
+        {
+            "id": 9,
+            "name": "Telecinesi",
+            "description": "La padronanza di questa tecnica consente a un Cavaliere Kai di muovere piccoli oggetti semplicemente concentrandosi."
+        }
+]

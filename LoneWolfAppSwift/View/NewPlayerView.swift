@@ -15,6 +15,9 @@ struct NewPlayerView: View {
     @State private var name = ""
     @State private var combat = 0
     @State private var endurance = 0
+    @State private var knownArts = [Int]()
+    
+    let arts: [KaiArt]
     
     var body: some View {
         NavigationView {
@@ -32,6 +35,20 @@ struct NewPlayerView: View {
                     Text("Endurance")
                     TextField("Initial Endurance", value: $endurance, formatter: NumberFormatter())
                         .keyboardType(.numberPad)
+                }
+                Section("Seleziona 5 discipline kai") {
+                    List(arts) { art in
+                        HStack {
+                            Text(art.name)
+                            Spacer()
+                            Button {
+                                tapKaiArt(art.id)
+                            } label: {
+                                Image(systemName: artChecked(art.id) ? "checkmark.circle.fill" : "circle")
+                            }
+
+                        }
+                    }
                 }
             }
             .onTapGesture {
@@ -53,6 +70,19 @@ struct NewPlayerView: View {
         }
     }
     
+    func tapKaiArt(_ id: Int) {
+        if artChecked(id) {
+            knownArts.remove(at: knownArts.firstIndex(of: id)!)
+        } else if knownArts.count < 5 {
+            knownArts.append(id)
+        }
+        // TODO: aggiungere eventuale notifica in un else
+    }
+    
+    func artChecked(_ id: Int) -> Bool {
+        knownArts.contains(id)
+    }
+    
     func saveGame() {
         player.setNewPlayer(name, combat, endurance)
         dismiss()
@@ -65,7 +95,7 @@ struct NewPlayerView: View {
 
 struct NewPlayerView_Previews: PreviewProvider {
     static var previews: some View {
-        NewPlayerView()
+        NewPlayerView(arts: Bundle.main.decode("KaiArtsIT.json"))
             .environmentObject(Player.example)
     }
 }

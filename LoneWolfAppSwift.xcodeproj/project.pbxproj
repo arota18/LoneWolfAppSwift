@@ -16,6 +16,9 @@
 		426DAACC2A574E700070A91B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 426DAACB2A574E700070A91B /* Preview Assets.xcassets */; };
 		426DAAD32A574FAE0070A91B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426DAAD22A574FAE0070A91B /* Player.swift */; };
 		426DAAD72A575CF90070A91B /* NewPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426DAAD62A575CF90070A91B /* NewPlayerView.swift */; };
+		4273C3462AC88C9B00BA259F /* KaiArtsIT.json in Resources */ = {isa = PBXBuildFile; fileRef = 4273C3452AC88C9B00BA259F /* KaiArtsIT.json */; };
+		4273C3482AC88D8500BA259F /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4273C3472AC88D8500BA259F /* Bundle-Decodable.swift */; };
+		4273C34B2AC88E9A00BA259F /* KaiArt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4273C34A2AC88E9A00BA259F /* KaiArt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,9 @@
 		426DAACB2A574E700070A91B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		426DAAD22A574FAE0070A91B /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		426DAAD62A575CF90070A91B /* NewPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlayerView.swift; sourceTree = "<group>"; };
+		4273C3452AC88C9B00BA259F /* KaiArtsIT.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = KaiArtsIT.json; sourceTree = "<group>"; };
+		4273C3472AC88D8500BA259F /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
+		4273C34A2AC88E9A00BA259F /* KaiArt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaiArt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,9 +67,11 @@
 		426DAAC32A574E6F0070A91B /* LoneWolfAppSwift */ = {
 			isa = PBXGroup;
 			children = (
+				4273C3492AC88DF700BA259F /* Util */,
 				426DAAD52A574FCE0070A91B /* View */,
 				426DAAD42A574FB70070A91B /* Model */,
 				426DAAC42A574E6F0070A91B /* LoneWolfAppSwiftApp.swift */,
+				4273C3452AC88C9B00BA259F /* KaiArtsIT.json */,
 				426DAAC82A574E700070A91B /* Assets.xcassets */,
 				426DAACA2A574E700070A91B /* Preview Content */,
 			);
@@ -82,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				426DAAD22A574FAE0070A91B /* Player.swift */,
+				4273C34A2AC88E9A00BA259F /* KaiArt.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -96,6 +105,14 @@
 				421DAF582A5C96DF000A52FE /* InfoView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		4273C3492AC88DF700BA259F /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				4273C3472AC88D8500BA259F /* Bundle-Decodable.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				426DAACC2A574E700070A91B /* Preview Assets.xcassets in Resources */,
+				4273C3462AC88C9B00BA259F /* KaiArtsIT.json in Resources */,
 				426DAAC92A574E700070A91B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -170,10 +188,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				421DAF572A5C9678000A52FE /* CombatView.swift in Sources */,
+				4273C3482AC88D8500BA259F /* Bundle-Decodable.swift in Sources */,
 				426DAAD72A575CF90070A91B /* NewPlayerView.swift in Sources */,
 				426DAAC72A574E6F0070A91B /* ContentView.swift in Sources */,
 				421DAF552A5C95D9000A52FE /* StatView.swift in Sources */,
 				426DAAD32A574FAE0070A91B /* Player.swift in Sources */,
+				4273C34B2AC88E9A00BA259F /* KaiArt.swift in Sources */,
 				426DAAC52A574E6F0070A91B /* LoneWolfAppSwiftApp.swift in Sources */,
 				421DAF592A5C96DF000A52FE /* InfoView.swift in Sources */,
 			);

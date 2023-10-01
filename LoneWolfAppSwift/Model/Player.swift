@@ -10,7 +10,7 @@ import Foundation
 class Player: ObservableObject, Codable {
     
     private enum CodingKeys: CodingKey {
-        case name, combat, endurance
+        case name, combat, endurance, kaiArts
     }
     
     @Published var name: String
@@ -20,12 +20,16 @@ class Player: ObservableObject, Codable {
     @Published var endurance: Int {
         willSet { save() }
     }
+    @Published var kaiArts: [Int] {
+        willSet { save() }
+    }
     
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         name = try container.decode(String.self, forKey: .name)
         combat = try container.decode(Int.self, forKey: .combat)
         endurance = try container.decode(Int.self, forKey: .endurance)
+        kaiArts = try container.decode([Int].self, forKey: .kaiArts)
     }
     
     func encode(to encoder: Encoder) throws {
@@ -33,6 +37,7 @@ class Player: ObservableObject, Codable {
         try container.encode(name, forKey: .name)
         try container.encode(combat, forKey: .combat)
         try container.encode(endurance, forKey: .endurance)
+        try container.encode(kaiArts, forKey: .kaiArts)
     }
     
     private static func getSaveUrl() -> URL {
@@ -46,11 +51,13 @@ class Player: ObservableObject, Codable {
             name = decoded.name
             combat = decoded.combat
             endurance = decoded.endurance
+            kaiArts = decoded.kaiArts
         } catch {
             print("error while loading player data: \(error.localizedDescription)")
             name = ""
             combat = 0
             endurance = 0
+            kaiArts = [Int]()
         }
     }
     

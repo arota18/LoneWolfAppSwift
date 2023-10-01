@@ -9,7 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @Environment(\.locale) private var loc
+    
     @StateObject var player = Player()
+    
+    @State private var arts: [KaiArt] = Bundle.main.decode("KaiArtsIT.json")
     
     @State private var isNewGameShown = false
     
@@ -19,7 +23,7 @@ struct ContentView: View {
                 Button("Create new Lone Wolf") { isNewGameShown = true }
             } else { mainMenuView }
         }
-        .sheet(isPresented: $isNewGameShown) { NewPlayerView() }
+        .sheet(isPresented: $isNewGameShown) { NewPlayerView(arts: arts) }
         .environmentObject(player)
     }
     
