@@ -27,7 +27,7 @@
         {
             "id": 5,
             "name": "Scherma",
-            "description": "Quando entra nel Monastero Kai, ogni allievo impara ad usare perfettamente un tipo di arma. Se decide di padroneggiare la disciplina Kai della scherma, estrai un numero al solito modo dalla Tabella del Destino e vedi nell'elenco che segue a quale arma corrisponde. Questa sarà l'arma in cui sei maestro. Se ti capiterà di affrontare un combattimento con tale arma, aggiungi due punti alla tua COMBATTIVITA'. Il fatto che tu sia esperto in una data arma non significa necessariamente che comincierai il viaggio con essa. Ad ogni modo, avrai la possibilità di procurarti diverse armi nel corso dell'avventura. Non puoi portare più di due armi alla volta e puoi usarne solo una durante un combattimento."
+            "description": "Quando entra nel Monastero Kai, ogni allievo impara ad usare perfettamente un tipo di arma. Se decide di padroneggiare la disciplina Kai della scherma, estrai un numero al solito modo dalla Tabella del Destino e vedi nell'elenco che segue a quale arma corrisponde. Questa sarà l'arma in cui sei maestro. Se ti capiterà di affrontare un combattimento con tale arma, aggiungi due punti alla tua COMBATTIVITÀ. Il fatto che tu sia esperto in una data arma non significa necessariamente che comincierai il viaggio con essa. Ad ogni modo, avrai la possibilità di procurarti diverse armi nel corso dell'avventura. Non puoi portare più di due armi alla volta e puoi usarne solo una durante un combattimento."
         },
         {
             "id": 6,
@@ -37,7 +37,7 @@
         {
             "id": 7,
             "name": "Psicolaser",
-            "description": "Questa tecnica permette a un Cavaliere Kai di attaccare i nemici con la forza della mente. Può essere usata insieme alle armi normali e aggiunge 2 punti alla tua COMBATTIVITA'. Non tutte le creature che si incontrano in questa avventura possono essere ferite con lo Psicolaser. Ti verrà di volta in volta detto se il tuo avversario ne è immune."
+            "description": "Questa tecnica permette a un Cavaliere Kai di attaccare i nemici con la forza della mente. Può essere usata insieme alle armi normali e aggiunge 2 punti alla tua COMBATTIVITÀ. Non tutte le creature che si incontrano in questa avventura possono essere ferite con lo Psicolaser. Ti verrà di volta in volta detto se il tuo avversario ne è immune."
         },
         {
             "id": 8,
