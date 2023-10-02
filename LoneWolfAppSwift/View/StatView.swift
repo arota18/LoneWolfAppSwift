@@ -26,6 +26,10 @@ extension View {
     }
 }
 
+enum Orientation {
+    case horizontal, vertical
+}
+
 struct StatView: View {
     
     @EnvironmentObject var player: Player
@@ -35,7 +39,7 @@ struct StatView: View {
         NavigationStack {
             VStack {
                 SingleStatView(statName: "Combat skill", singleStat: $player.combat)
-                .padding(.bottom)
+                    .padding(.bottom)
                 SingleStatView(statName: "Endurance", singleStat: $player.endurance)
             }
             .toolbar {
@@ -53,9 +57,22 @@ struct StatView: View {
 
 struct SingleStatView: View {
     
-    let statName: String
     @Binding var singleStat: Int
-    let iconSizeAndGap = 32.0
+    let statName: String
+    let orientation: Orientation
+    let iconSizeAndGap = 32.0 // TODO: think about make it editable
+    
+    init(statName: String, singleStat: Binding<Int>) {
+        self.statName = statName
+        self._singleStat = singleStat
+        self.orientation = .horizontal
+    }
+    
+    init(statName: String, singleStat: Binding<Int>, orientation: Orientation) {
+        self.statName = statName
+        self._singleStat = singleStat
+        self.orientation = orientation
+    }
     
     var body: some View {
         VStack {
@@ -72,6 +89,24 @@ struct SingleStatView: View {
                 }
                 Text("\(singleStat)")
                     .statMod()
+                    .gesture(DragGesture(minimumDistance: 10, coordinateSpace: .local)
+                             // TODO: think about add onChange modifier
+                        .onEnded({ value in
+                            if orientation == .horizontal {
+                                if value.translation.width > 0 {
+                                    singleStat += 1
+                                } else if value.translation.width < 0 {
+                                    singleStat -= 1
+                                }
+                            } else {
+                                if value.translation.height < 0 {
+                                    singleStat += 1
+                                } else if value.translation.height > 0 {
+                                    singleStat -= 1
+                                }
+                            }
+                        })
+                    )
                 Button {
                     singleStat += 1
                 } label: {
@@ -82,5 +117,28 @@ struct SingleStatView: View {
                 }
             }
         }
+    }
+}
+
+struct StatView_Previews: PreviewProvider {
+    static var previews: some View {
+        StatefulPreviewWrapper(false) { val in
+            StatView(isNewGameShown: val)
+                .environmentObject(Player.example)
+        }
+    }
+}
+
+struct StatefulPreviewWrapper<Value, Content: View>: View {
+    @State var value: Value
+    var content: (Binding<Value>) -> Content
+    
+    var body: some View {
+        content($value)
+    }
+    
+    init(_ value: Value, content: @escaping (Binding<Value>) -> Content) {
+        self._value = State(wrappedValue: value)
+        self.content = content
     }
 }
